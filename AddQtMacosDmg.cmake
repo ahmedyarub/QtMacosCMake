@@ -72,7 +72,7 @@ function(add_qt_macos_dmg TARGET)
     if (NOT ARGMAC_QML_DIR)
         set(ARGMAC_QML_DIR ${QT_MACOS_QT_ROOT}/qml)
     endif ()
-    set(QT_MACOS_APP_QML_DIR -qmldir ${ARGMAC_QML_DIR})
+    set(QT_MACOS_APP_QML_DIR -qmldir=${ARGMAC_QML_DIR})
 
     if (ARGMAC_NO_PLUGINS)
         set(QT_MACOS_APP_NO_PLUGINS -no-plugins)
