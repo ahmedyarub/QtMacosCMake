@@ -1,8 +1,8 @@
 # find the Qt root directory
-if (NOT Qt5Core_DIR)
-    find_package(Qt5Core REQUIRED)
+if (NOT Qt6Core_DIR)
+    find_package(Qt6Core REQUIRED)
 endif ()
-get_filename_component(QT_MACOS_QT_ROOT "${Qt5Core_DIR}/../../.." ABSOLUTE)
+get_filename_component(QT_MACOS_QT_ROOT "${Qt6Core_DIR}/../../.." ABSOLUTE)
 message(STATUS "Found Qt for MacOS: ${QT_MACOS_QT_ROOT}")
 
 set(QT_MACOS_QT_ROOT ${QT_MACOS_QT_ROOT})
@@ -99,7 +99,7 @@ function(add_qt_macos_dmg TARGET)
             ${QT_MACOS_ALL}
             DEPENDS ${TARGET} ${ARGMAC_DEPENDS}
             COMMAND ${QT_MACOS_QT_ROOT}/bin/macdeployqt
-            ${TARGET}.app
+            $<TARGET_BUNDLE_DIR:${TARGET}>
             -dmg
             ${QT_MACOS_APP_QML_DIR}
             ${QT_MACOS_APP_NO_PLUGINS}
