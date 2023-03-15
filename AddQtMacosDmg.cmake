@@ -106,6 +106,6 @@ function(add_qt_macos_dmg TARGET)
             ${QT_MACOS_APP_NO_STRIP}
             ${QT_MACOS_APP_OVERWRITE_EXISTING}
             ${QT_MACOS_APP_VERBOSE_LEVEL_DEPLOY}
-            COMMENT "call ${QT_MACOS_QT_ROOT}/bin/macdeployqt in folder $<TARGET_FILE_DIR:${TARGET}>"
+            COMMENT "call ${QT_MACOS_QT_ROOT}/bin/macdeployqt for target ${TARGET}"
             )
 endfunction()
